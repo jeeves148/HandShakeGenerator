@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="HandShakeGeneratorStyle.css">
+
+    <!-- javascript -->
+    <script src="handShake.js"></script>
+    <script src="sliderCode.js"></script>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <title>Hand Shake generator</title>
+</head>
+<body>
+    <header>
+        <h1>Hand shake generator</h1>
+    </header>
+    
+    <button onclick="handShakeGenerator()">test prototype 1</button>
+    
+    <input type="range" id="length" name="length" min="1" max="11" value="3">
+    <label for="length">Volume</label>
+    <p id = "sliderValue">value </p>
+    
+    <!-- script for displaying slider -->
+    <script>
+    var slider = document.getElementById("length");
+    var output = document.getElementById("sliderValue");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+
+    </script>
+
+    <p id="output"></p>
+
+
+</body>
+</html>
