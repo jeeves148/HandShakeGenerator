@@ -1,51 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Style sheets -->
-    <link rel="stylesheet" href="HandShakeGeneratorStyle.css">
+    <link rel="stylesheet" href="HandShakeGeneratorStyle.css" />
 
     <!-- javascript -->
     <script src="handShake.js"></script>
     <script src="sliderCode.js"></script>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Hand Shake generator</title>
-</head>
-<body>
-    <header>
-        <h1>Hand shake generator</h1>
-    </header>
-    
-    <button onclick="handShakeGenerator()">test prototype 1</button>
-    
-    <input type="range" id="length" name="length" min="1" max="11" value="3">
-    <label for="length">Volume</label>
-    <p id = "sliderValue">value </p>
-    
-    <!-- script for displaying slider -->
-    <script>
-    var slider = document.getElementById("length");
-    var output = document.getElementById("sliderValue");
-    output.innerHTML = slider.value; // Display the default slider value
+  </head>
+  <body>
+    <div class="banner">
+      <h1>Hand shake generator</h1>
+    </div>
 
-    // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
-        output.innerHTML = this.value;
-    }
+    <div class="double-container">
+      <div class="form">
+        <label for="length">How long </label>
+        <input
+          type="range"
+          id="length"
+          name="length"
+          min="1"
+          max="11"
+          value="3"
+        />
+        <p class="label" id="sliderValue">value</p>
 
-    </script>
+        <!-- script for displaying slider -->
+        <script>
+          var slider = document.getElementById("length");
+          var output = document.getElementById("sliderValue");
+          output.innerHTML = slider.value + " gestures long"; // Display the default slider value
 
-    <p id="output"></p>
+          // Update the current slider value (each time you drag the slider handle)
+          slider.oninput = function () {
+            output.innerHTML = this.value + " gestures long";
+          };
+        </script>
 
-
-</body>
+        <button onclick="handShakeGenerator()">test prototype 1</button>
+      </div>
+      <div id="output-box">
+        iurfhpaiurgh;ariough
+      </div>
+    </div>
+  </body>
 </html>
